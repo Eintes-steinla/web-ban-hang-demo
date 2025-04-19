@@ -1,219 +1,219 @@
 const products = [
   {
     id: 1,
-    name: "Modern Coffee Maker",
-    price: 89.99,
-    category: "Kitchen Appliances",
+    name: "Máy pha cà phê hiện đại",
+    price: 2190000,
+    category: "Thiết bị nhà bếp",
     image:
       "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Automatic drip coffee maker with timer",
+    description: "Máy pha cà phê tự động với hẹn giờ",
   },
   {
     id: 2,
-    name: "Robot Vacuum Cleaner",
-    price: 299.99,
-    category: "Cleaning Supplies",
+    name: "Robot hút bụi",
+    price: 6990000,
+    category: "Dụng cụ vệ sinh",
     image:
-      "https://images.unsplash.com/photo-1589922585618-d053d9f6f58a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Smart robot vacuum with WiFi connectivity",
+      "https://i.pinimg.com/736x/c8/c4/33/c8c433247518603236856f3ac6621789.jpg",
+    description: "Robot hút bụi thông minh kết nối WiFi",
   },
   {
     id: 3,
-    name: "Modern Wall Clock",
-    price: 49.99,
-    category: "Home Decor",
+    name: "Đồng hồ treo tường hiện đại",
+    price: 1190000,
+    category: "Trang trí nhà cửa",
     image:
-      "https://images.unsplash.com/photo-1589739900843-4b8e3bf5f320?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Minimalist design wall clock",
+      "https://i.pinimg.com/736x/ca/9d/82/ca9d82472fee48a567205fc5eb1f9f64.jpg",
+    description: "Đồng hồ treo tường thiết kế tối giản",
   },
   {
     id: 4,
-    name: "Air Purifier",
-    price: 199.99,
-    category: "Home Appliances",
+    name: "Máy lọc không khí",
+    price: 4990000,
+    category: "Thiết bị gia dụng",
     image:
-      "https://images.unsplash.com/photo-1589739900843-4b8e3bf5f320?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "HEPA filter air purifier for large rooms",
+      "https://i.pinimg.com/736x/40/41/ee/4041eeed9d8a6946bf17d7d422648920.jpg",
+    description: "Máy lọc không khí HEPA cho phòng lớn",
   },
   {
     id: 5,
-    name: "Smart Thermostat",
-    price: 159.99,
-    category: "Smart Home",
+    name: "Nhiệt kế thông minh",
+    price: 3990000,
+    category: "Nhà thông minh",
     image:
-      "https://images.unsplash.com/photo-1585593266439-8e6d4d96f8a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "WiFi enabled smart thermostat with app control",
+      "https://i.pinimg.com/736x/4e/d4/e2/4ed4e2a37ce4a5d5e26844b7bc2880fe.jpg",
+    description: "Nhiệt kế thông minh kết nối WiFi với ứng dụng điều khiển",
   },
   {
     id: 6,
-    name: "Blender",
-    price: 79.99,
-    category: "Kitchen Appliances",
+    name: "Máy xay sinh tố",
+    price: 1990000,
+    category: "Thiết bị nhà bếp",
     image:
       "https://images.unsplash.com/photo-1570222094114-d054a817e56b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "High-speed blender with multiple settings",
+    description: "Máy xay sinh tố tốc độ cao với nhiều chế độ",
   },
   {
     id: 7,
-    name: "LED Floor Lamp",
-    price: 129.99,
-    category: "Home Decor",
+    name: "Đèn sàn LED",
+    price: 3290000,
+    category: "Trang trí nhà cửa",
     image:
       "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Modern LED floor lamp with adjustable brightness",
+    description: "Đèn sàn LED hiện đại với độ sáng điều chỉnh",
   },
   {
     id: 8,
-    name: "Smart Doorbell",
-    price: 149.99,
-    category: "Smart Home",
+    name: "Chuông cửa thông minh",
+    price: 3790000,
+    category: "Nhà thông minh",
     image:
       "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Video doorbell with motion detection",
+    description: "Chuông cửa video với cảm biến chuyển động",
   },
   {
     id: 9,
-    name: "Toaster Oven",
-    price: 89.99,
-    category: "Kitchen Appliances",
+    name: "Lò nướng bánh mì",
+    price: 2190000,
+    category: "Thiết bị nhà bếp",
     image:
       "https://images.unsplash.com/photo-1585659722983-3a675dabf23d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Digital toaster oven with multiple cooking modes",
+    description: "Lò nướng bánh mì kỹ thuật số với nhiều chế độ nấu",
   },
   {
     id: 10,
-    name: "Throw Pillows Set",
-    price: 39.99,
-    category: "Home Decor",
+    name: "Bộ gối trang trí",
+    price: 999000,
+    category: "Trang trí nhà cửa",
     image:
       "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Set of 4 decorative throw pillows",
+    description: "Bộ 4 gối trang trí",
   },
   {
     id: 11,
-    name: "Wireless Speaker",
-    price: 129.99,
-    category: "Electronics",
+    name: "Loa không dây",
+    price: 3290000,
+    category: "Điện tử",
     image:
       "https://images.unsplash.com/photo-1589003077984-894e133dabab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Portable Bluetooth speaker with rich sound",
+    description: "Loa Bluetooth di động với âm thanh sống động",
   },
   {
     id: 12,
-    name: "Microwave Oven",
-    price: 159.99,
-    category: "Kitchen Appliances",
+    name: "Lò vi sóng",
+    price: 3990000,
+    category: "Thiết bị nhà bếp",
     image:
       "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "1000W microwave with smart sensors",
+    description: "Lò vi sóng 1000W với cảm biến thông minh",
   },
   {
     id: 13,
-    name: "Area Rug",
-    price: 199.99,
-    category: "Home Decor",
+    name: "Thảm trải sàn",
+    price: 4990000,
+    category: "Trang trí nhà cửa",
     image:
       "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Modern geometric pattern area rug",
+    description: "Thảm trải sàn họa tiết hình học hiện đại",
   },
   {
     id: 14,
-    name: "Smart Light Bulbs",
-    price: 49.99,
-    category: "Smart Home",
+    name: "Bóng đèn thông minh",
+    price: 1190000,
+    category: "Nhà thông minh",
     image:
-      "https://images.unsplash.com/photo-1587037542794-6c5ef0fd8ac3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Set of 4 WiFi-enabled color changing bulbs",
+      "https://i.pinimg.com/736x/d1/79/f4/d179f48d5a30819f4e7c7136bb14b119.jpg",
+    description: "Bộ 4 bóng đèn đổi màu kết nối WiFi",
   },
   {
     id: 15,
-    name: "Stand Mixer",
-    price: 279.99,
-    category: "Kitchen Appliances",
+    name: "Máy trộn bột",
+    price: 6990000,
+    category: "Thiết bị nhà bếp",
     image:
-      "https://images.unsplash.com/photo-1578598336003-71cd838e0c92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Professional grade stand mixer with accessories",
+      "https://i.pinimg.com/736x/06/63/b3/0663b34dc008defba3ce76cd1d425b5b.jpg",
+    description: "Máy trộn bột chuyên nghiệp với phụ kiện đi kèm",
   },
   {
     id: 16,
-    name: "Security Camera",
-    price: 89.99,
-    category: "Smart Home",
+    name: "Camera an ninh",
+    price: 2190000,
+    category: "Nhà thông minh",
     image:
-      "https://images.unsplash.com/photo-1557324232-b8917d8c3427?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Indoor security camera with night vision",
+      "https://i.pinimg.com/736x/61/26/8d/61268de5c74c638bab5c431d5e12b494.jpg",
+    description: "Camera an ninh trong nhà với chế độ nhìn đêm",
   },
   {
     id: 17,
-    name: "Desk Lamp",
-    price: 44.99,
-    category: "Home Decor",
+    name: "Đèn bàn",
+    price: 1090000,
+    category: "Trang trí nhà cửa",
     image:
       "https://images.unsplash.com/photo-1534105615256-13940a56ff44?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Adjustable LED desk lamp with USB port",
+    description: "Đèn bàn LED điều chỉnh được với cổng USB",
   },
   {
     id: 18,
-    name: "Air Fryer",
-    price: 119.99,
-    category: "Kitchen Appliances",
+    name: "Nồi chiên không dầu",
+    price: 2990000,
+    category: "Thiết bị nhà bếp",
     image:
-      "https://images.unsplash.com/photo-1589369439406-6942a92a1518?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Digital air fryer with multiple presets",
+      "https://i.pinimg.com/736x/28/8a/74/288a74ca157de712c14b0ed6ad22e56b.jpg",
+    description: "Nồi chiên không dầu kỹ thuật số với nhiều chế độ",
   },
   {
     id: 19,
-    name: "Smart Scale",
-    price: 59.99,
-    category: "Smart Home",
+    name: "Cân thông minh",
+    price: 1490000,
+    category: "Nhà thông minh",
     image:
       "https://images.unsplash.com/photo-1578319439584-104c94d37305?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Bluetooth connected smart scale",
+    description: "Cân thông minh kết nối Bluetooth",
   },
   {
     id: 20,
-    name: "Wall Art Set",
-    price: 149.99,
-    category: "Home Decor",
+    name: "Bộ tranh treo tường",
+    price: 3790000,
+    category: "Trang trí nhà cửa",
     image:
       "https://images.unsplash.com/photo-1582045253062-f63cfbd45bcb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Set of 3 modern canvas prints",
+    description: "Bộ 3 tranh canvas hiện đại",
   },
   {
     id: 21,
-    name: "Food Processor",
-    price: 169.99,
-    category: "Kitchen Appliances",
+    name: "Máy xay thực phẩm",
+    price: 4290000,
+    category: "Thiết bị nhà bếp",
     image:
-      "https://images.unsplash.com/photo-1589731119540-c4c1a7a61c7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "10-cup food processor with multiple blades",
+      "https://i.pinimg.com/736x/ca/a6/0e/caa60e5e3fe1f4c9753e0720606f1190.jpg",
+    description: "Máy xay thực phẩm 10 cốc với nhiều lưỡi dao",
   },
   {
     id: 22,
-    name: "Smart Plug",
-    price: 24.99,
-    category: "Smart Home",
+    name: "Ổ cắm thông minh",
+    price: 629000,
+    category: "Nhà thông minh",
     image:
       "https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "WiFi enabled smart plug with voice control",
+    description: "Ổ cắm thông minh kết nối WiFi với điều khiển giọng nói",
   },
   {
     id: 23,
-    name: "Mirror Set",
-    price: 89.99,
-    category: "Home Decor",
+    name: "Bộ gương treo tường",
+    price: 2190000,
+    category: "Trang trí nhà cửa",
     image:
       "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Set of 3 decorative wall mirrors",
+    description: "Bộ 3 gương treo tường trang trí",
   },
   {
     id: 24,
-    name: "Rice Cooker",
-    price: 79.99,
-    category: "Kitchen Appliances",
+    name: "Nồi cơm điện",
+    price: 1990000,
+    category: "Thiết bị nhà bếp",
     image:
-      "https://images.unsplash.com/photo-1589831494949-63e522dd63aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "Digital rice cooker with steamer basket",
+      "https://i.pinimg.com/736x/fe/18/78/fe18787d3b91bdb6cac79ac0f9a03b0a.jpg",
+    description: "Nồi cơm điện kỹ thuật số với giỏ hấp",
   },
 ];
 
@@ -225,25 +225,54 @@ products.forEach((product) => {
 const ITEMS_PER_PAGE = 6; // 2 rows x 3 columns
 let currentPage = 1;
 
+// Get unique categories from products
+const categories = [...new Set(products.map((product) => product.category))];
+
 document.addEventListener("DOMContentLoaded", function () {
+  // Add categories to checkbox list
+  const categoryList = document.querySelector(".bg-gray-50 ul");
+  categoryList.innerHTML = categories
+    .map(
+      (category) => `
+    <li>
+      <label class="flex items-center space-x-2">
+        <input type="checkbox" class="rounded" value="${category}"/>
+        <span>${category}</span>
+      </label>
+    </li>
+  `
+    )
+    .join("");
+
   // Initial filter state
   let filters = {
     categories: [],
     minPrice: 0,
-    maxPrice: 1000,
-    sortBy: "newest",
+    maxPrice: 10000000,
+    sortBy: "mới nhất",
+    searchQuery: "", // Add search query to filters
   };
+
+  // Add search event listener
+  document
+    .getElementById("productSearch")
+    ?.addEventListener("input", function (e) {
+      filters.searchQuery = e.target.value.toLowerCase();
+      currentPage = 1;
+      applyFilters();
+    });
 
   // Update filters when checkboxes change
   document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
     checkbox.addEventListener("change", function () {
       if (this.checked) {
-        filters.categories.push(this.nextElementSibling.textContent.trim());
+        filters.categories.push(this.value);
       } else {
         filters.categories = filters.categories.filter(
-          (cat) => cat !== this.nextElementSibling.textContent.trim()
+          (cat) => cat !== this.value
         );
       }
+      currentPage = 1; // Reset to first page when filter changes
       applyFilters();
     });
   });
@@ -268,6 +297,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function applyFilters() {
     let filteredProducts = [...products]; // Create a copy to avoid modifying original array
+
+    // Apply search filter
+    if (filters.searchQuery) {
+      filteredProducts = filteredProducts.filter(
+        (product) =>
+          product.name.toLowerCase().includes(filters.searchQuery) ||
+          product.description.toLowerCase().includes(filters.searchQuery) ||
+          product.category.toLowerCase().includes(filters.searchQuery)
+      );
+    }
 
     // Apply category filters
     if (filters.categories.length > 0) {
@@ -565,6 +604,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function addToCart(productId) {
   const product = products.find((p) => p.id === productId);
-  console.log(`Added to cart: ${product.name}`);
+  console.log(`Đã thêm vào giỏ hàng: ${product.name}`);
   // Implement cart functionality here
 }
