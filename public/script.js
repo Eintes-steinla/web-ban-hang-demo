@@ -222,6 +222,147 @@ products.forEach((product) => {
   product.featured = Math.random() > 0.7; // Randomly assign featured status for demo
 });
 
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function updateCartCount() {
+  const cartCount = document.getElementById("cartCount");
+  if (cartCount) {
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+  }
+}
+
+function addToCart(productId) {
+  const product = products.find((p) => p.id === productId);
+  const existingItem = cart.find((item) => item.id === productId);
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1,
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  showToast("Đã thêm vào giỏ hàng!");
+
+  // Update cart display if on cart page
+  if (window.location.pathname.includes("cart.html")) {
+    displayCart();
+  }
+}
+
+function removeFromCart(productId) {
+  cart = cart.filter((item) => item.id !== productId);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  if (window.location.pathname.includes("cart.html")) {
+    displayCart();
+  }
+}
+
+function updateCartQuantity(productId, quantity) {
+  const item = cart.find((item) => item.id === productId);
+  if (item) {
+    item.quantity = Math.max(1, quantity);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    if (window.location.pathname.includes("cart.html")) {
+      displayCart();
+    }
+  }
+}
+
+function displayCart() {
+  const cartItems = document.getElementById("cartItems");
+  const subtotal = document.getElementById("subtotal");
+  const total = document.getElementById("total");
+
+  if (!cartItems) return;
+
+  if (cart.length === 0) {
+    cartItems.innerHTML =
+      '<div class="text-center py-8 text-gray-500"><p>Giỏ hàng của bạn đang trống</p><p class="mt-2">Hãy thêm sản phẩm vào giỏ hàng</p></div>';
+    subtotal.textContent = "0 ₫";
+    total.textContent = "30,000 ₫";
+    return;
+  }
+
+  cartItems.innerHTML = `
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      ${cart
+        .map(
+          (item) => `
+        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-4">
+          <div class="relative group mb-4">
+            <img src="${item.image}" alt="${
+            item.name
+          }" class="w-full h-48 object-cover rounded-lg">
+            <div class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-10 transition-all rounded-lg"></div>
+          </div>
+          
+          <div class="text-center">
+            <h3 class="font-semibold text-lg mb-2 text-nowrap truncate">${
+              item.name
+            }</h3>
+            <p class="text-blue-600 font-medium">${item.price.toLocaleString(
+              "vi-VN"
+            )} ₫</p>
+            
+            <div class="flex items-center justify-center gap-3 mt-3">
+              <div class="flex items-center border border-gray-300 rounded-lg">
+                <button onclick="updateCartQuantity(${item.id}, ${
+            item.quantity - 1
+          })" 
+                  class="px-3 py-1 text-gray-600 hover:bg-gray-100 rounded-l-lg transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                  </svg>
+                </button>
+                <span class="px-4 py-1 border-x border-gray-300">${
+                  item.quantity
+                }</span>
+                <button onclick="updateCartQuantity(${item.id}, ${
+            item.quantity + 1
+          })" 
+                  class="px-3 py-1 text-gray-600 hover:bg-gray-100 rounded-r-lg transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            <p class="font-medium text-blue-600 mt-3">
+              Tổng: ${(item.price * item.quantity).toLocaleString("vi-VN")} ₫
+            </p>
+
+            <button onclick="removeFromCart(${item.id})" 
+              class="mt-4 text-red-500 hover:text-red-700 transition-colors p-2">
+              <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      `
+        )
+        .join("")}
+    </div>`;
+
+  const subtotalAmount = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+  subtotal.textContent = subtotalAmount.toLocaleString("vi-VN") + " ₫";
+  total.textContent = (subtotalAmount + 30000).toLocaleString("vi-VN") + " ₫";
+}
+
 const ITEMS_PER_PAGE = 6; // 2 rows x 3 columns
 let currentPage = 1;
 
@@ -229,6 +370,17 @@ let currentPage = 1;
 const categories = [...new Set(products.map((product) => product.category))];
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Load cart from localStorage
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Update cart count badge
+  updateCartCount();
+
+  // If on cart page, display cart items
+  if (window.location.pathname.includes("cart.html")) {
+    displayCart();
+  }
+
   // Add categories to checkbox list
   const categoryList = document.querySelector(".bg-gray-50 ul");
   categoryList.innerHTML = categories
@@ -578,6 +730,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initial render
   updateFeaturedProducts();
+  updateCartCount();
+  if (window.location.pathname.includes("cart.html")) {
+    displayCart();
+  }
 });
 
 // Back to top functionality
@@ -602,8 +758,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function addToCart(productId) {
-  const product = products.find((p) => p.id === productId);
-  console.log(`Đã thêm vào giỏ hàng: ${product.name}`);
-  // Implement cart functionality here
+function showToast(message) {
+  const toast = document.createElement("div");
+  toast.className =
+    "fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg transition-opacity duration-300";
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(() => {
+    toast.remove();
+  }, 2000);
 }

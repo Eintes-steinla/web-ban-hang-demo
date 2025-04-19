@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/input.css" />
-    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./src/output.css" />
 
     <!-- * favicon -->
     <link
@@ -90,7 +90,9 @@
     <nav class="flex justify-between items-center mx-auto px-4 py-3 container">
       <h1 class="font-bold text-xl">Logo</h1>
       <div class="hidden md:flex space-x-6">
-        <a href="#" class="font-bold hover:text-blue-500 text-xl">Trang chủ</a>
+        <a href="index.html" class="font-bold hover:text-blue-500 text-xl"
+          >Trang chủ</a
+        >
         <a href="#" class="font-bold hover:text-blue-500 text-xl">Sản phẩm</a>
         <a href="#" class="font-bold hover:text-blue-500 text-xl">Giới thiệu</a>
         <a href="#" class="font-bold hover:text-blue-500 text-xl">Liên hệ</a>
@@ -111,7 +113,7 @@
             />
           </svg>
         </button>
-        <a href="#" class="hover:text-blue-500">
+        <a href="./src/cart.html" class="relative hover:text-blue-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
@@ -125,6 +127,11 @@
               d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"
             />
           </svg>
+          <span
+            id="cartCount"
+            class="-top-2 -right-2 absolute flex justify-center items-center bg-red-500 rounded-full w-5 h-5 text-white text-xs"
+            >0</span
+          >
         </a>
       </div>
     </nav>
